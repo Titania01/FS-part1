@@ -18,18 +18,23 @@ import ReactDOM from "react-dom";
 
 const App = (props) => {
   const [ counter, setCounter ] = useState(0) 
+
+  const increaseByOne = () => setCounter(counter + 1)
   
-  setTimeout(
-    () => setCounter(counter + 1),
-    1000
-  )
-    
+  const setToZero = () => setCounter(0)
   return (
     <div>
-      <h1>Greetings</h1>
+      {/* <h1>Greetings</h1> */}
       {/* <Hello name="Maya" age={26 + 10} /> */}
       {/* <Hello name={name} age={age} /> */}
       {counter}
+    
+      <button onClick={ increaseByOne }>
+        plus
+      </button>
+      <button onClick={ setToZero } >
+        zero
+      </button>
     </div>
   );
 };
